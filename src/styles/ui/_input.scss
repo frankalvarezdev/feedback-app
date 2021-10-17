@@ -1,0 +1,10 @@
+.input {
+    &[type=text], &[type=password], &.is-text {
+        @include text-input($extra-bg, $color);
+        @each $name, $color in $colors {
+            &.is-#{$name} {
+                border-bottom: 2px solid $color;
+            }
+        }
+    }
+}

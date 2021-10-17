@@ -1,0 +1,158 @@
+@import "./config/config";
+@import "./config/variables";
+@import "./config/base";
+@import "../../node_modules/ascendcss/ascendcss.scss";
+@import "./components/buttons";
+@import "./components/container";
+@import "./components/form";
+@import "./components/navbar";
+@import "./components/box";
+@import "./components/login-widget";
+@import "./components/tabs";
+@import "./components/track-form";
+@import "./components/chips";
+@import "./components/track";
+
+@import "./ui/tags";
+@import "./ui/button";
+@import "./ui/form";
+@import "./ui/input";
+@import "./ui/textarea";
+@import "./ui/select";
+@import "./ui/checkbox";
+@import "./ui/card";
+@import "./ui/gallery";
+@import "./ui/badge";
+@import "./ui/breadcrumb";
+@import "./ui/utils";
+@import "./ui/grid";
+@import "./ui/image";
+@import "./ui/modal";
+@import "./ui/alerts";
+@import "./ui/collape";
+@import "./ui/dropdown";
+@import "./ui/share";
+
+@import "./icons/icons";
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    img {
+        user-select: none !important;
+    }
+
+    .badge,
+    .breadcrumb {
+        user-select: none !important;
+    }
+
+    button {
+        user-select: none !important;
+    }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.home-banner {
+    background-image: linear-gradient($secondary-bg, rgba(0, 0, 0, 0.5)), url(https://cdn.sandmy.com/storage/uploads/2021/10/05/tanner-boriack_uid_615ba93f43d65.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 15rem 2rem;
+    text-align: center;
+    border-radius: 0 0 rpt(2, 2.34rem);
+}
+.container {
+    @include container;
+    &.has-top-margin {
+        padding-top: 1.5rem;
+    }
+    padding-bottom: 6rem;
+}
+
+.article-content {
+    p{
+        line-height: 1.2rem;
+        color: darken(#C7C8C9, 15%);
+        margin-bottom: 1.2rem;
+    }
+    a {
+        color: $primary-color;
+        font-weight: normal;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    iframe,
+    img {
+        border-radius: $radius-sm;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @include from(md) {
+
+        iframe,
+        img {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+
+    blockquote {
+        background-color: $secondary-bg;
+        // background-color: red;
+        padding: 10px 15px;
+        border-left: 4px solid $primary-color;
+        position: relative;
+        border-radius: 0 rpt(2, $radius-sm) 0;
+        margin: 1rem 0;
+    }
+}
+
+ul,
+ol {
+    display: block;
+    list-style: disc outside none;
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    display: list-item;
+}
+
+ul ul,
+ol ul {
+    list-style-type: circle;
+    margin-left: 15px;
+}
+
+ol ol,
+ul ol {
+    list-style-type: lower-latin;
+    margin-left: 15px;
+}
+.form-content {
+    max-width: 600px;
+    margin: auto;
+}
+.react-loading {
+    @include center;
+}

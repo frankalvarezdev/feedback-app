@@ -1,0 +1,44 @@
+.tab {
+    background-color: $secondary-bg;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    @include center;
+
+    &-buttons {
+        text-indent: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        @include col(1 1);
+        max-width: 500px;
+        width: 100%;
+
+        a {
+            text-align: center;
+            cursor: pointer;
+            padding: $padding;
+            border-radius: $radius-sm;
+            display: block;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &-select {
+        background-color: $extra-bg;
+    }
+
+    &-title {
+        display: block;
+        font-size: 0.8rem;
+    }
+
+    &-icon {
+        font-size: 1.3rem !important;
+        display: block;
+    }
+}

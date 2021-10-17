@@ -1,0 +1,73 @@
+// background
+$bg: var(--bg);
+$secondary-bg: var(--secondary-bg);
+$extra-bg: var(--extra-bg);
+
+// colors
+$color: var(--color);
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$danger-color: var(--danger-color);
+$success-color: var(--success-color);
+$warning-color: var(--warning-color);
+
+$colors: (
+    danger: $danger-color,
+    warning: $warning-color,
+    success: $success-color,
+    primary: $secondary-color
+);
+
+// border
+$border-color: var(--border-color);
+
+// radius
+$radius-sm: 0.5rem;
+$radius: 1rem;
+$radius-full: 5rem;
+
+// margin
+$margin-sm: 0.5rem;
+$margin: 1rem;
+$margin-lg: 1.4rem;
+
+$margins: (
+    sm: $margin-sm,
+    lg: $margin-lg
+);
+
+// padding
+$padding-sm: 0.5rem;
+$padding: 1rem;
+$padding-lg: 1.5rem;
+
+$paddings: (
+    padding-sm: $padding-sm,
+    padding: $padding,
+    padding-lg: $padding-lg
+);
+
+
+// Breakpoints
+$screen-sm: 32em;
+$screen-md: 48em;
+$screen-lg: 64em;
+$screen-xl: 90em;
+
+// Breakpoints Map
+$breakpoints: (
+    xm: 0,
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg,
+    xl: $screen-xl,
+);
+
+// navbar
+$navbar-width: 60px;
+$navbar-height: 60px;
+// $nav-color: #0a0b0d;
+$z-index: 9900;
+$navbar-index: 9900;
+
+$positions: top, bottom, left, right;

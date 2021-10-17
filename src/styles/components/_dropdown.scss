@@ -1,0 +1,72 @@
+@import "../utilities//functions/getVariable";
+@mixin dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+@mixin dropdown-menu($config: ()) {
+    // variables por defecto
+    $default: (
+        background: #fff,
+        color: #000,
+        shadow: true,
+        translate-x: 0,
+        translate-y: 0,
+    );
+
+    .dropdown-menu {
+        transition: 0.3s;
+        display: none;
+        position: absolute;
+        background-color: getVariable($default, $config, background);
+        color: getVariable($default, $config, color);
+        min-width: 150px;
+        
+        @if getVariable($default, $config, shadow) {
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        z-index: 1;
+        border-radius: 0.2em;
+        transform: translate(getVariable($default, $config, translate-x), getVariable($default, $config, translate-y));
+        
+        &:hover {
+            display: block;
+        }
+
+        // Estilos personalizados 
+        @content;
+    }
+}
+@mixin dropdown-active {
+    .dropdown-active {
+        display: block;
+        @content;
+    }
+}
+@mixin dropdown-item {
+    .dropdown-item {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        @content;
+    }
+}
+@mixin dropdown-button($hover: true, $button: true) {
+    .dropdown-button {
+        @if $button {
+            @include btn;
+            margin-bottom: 0;
+        } @else {
+            cursor: pointer;  
+        }
+        
+        @if $hover {
+            &:hover ~ .dropdown-menu {
+                display: block !important
+            }
+        }
+        @content;
+    }
+}

@@ -1,0 +1,35 @@
+@mixin main-btn {
+	display: inline-block;
+	padding: 0.5rem 0.7rem;
+	font-size: 1rem;
+	border: none;
+	border-radius: $radius-sm;
+	cursor: pointer;
+	transition: 0.1s;
+	outline: none;
+	text-decoration: none;
+	&:active {
+		transform: scale(0.98);
+	}
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+@mixin btn-item($bg: #000, $color: #fff) {
+	background-color: $bg;
+	border: 1px solid $bg;
+	color: $color;
+}
+
+@mixin btn($bg: #000, $color: #fff) {
+	@include main-btn;
+	background-color: $bg;
+	border: 1px solid $bg;
+	color: $color;
+}
+@mixin xpend-box {
+	border-radius: $radius;
+    background: $secondary-bg;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .05);
+}

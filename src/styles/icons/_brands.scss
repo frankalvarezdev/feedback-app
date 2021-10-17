@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "brands";
+    src: url("/fonts/brands.ttf?k2gsf4") format("truetype"), url("/fonts/brands.woff?k2gsf4") format("woff"),
+        url("/fonts/brands.svg?k2gsf4#brands") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="brand-"],
+[class*=" brand-"] {
+    font-family: "brands" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.brand-youtubemusic:before {
+    content: "\e900";
+}
+.brand-amazon:before {
+    content: "\e901";
+}
+.brand-apple:before {
+    content: "\e902";
+}
+.brand-applemusic:before {
+    content: "\e903";
+}
+.brand-audiomack:before {
+    content: "\e904";
+}
+.brand-beatport:before {
+    content: "\e905";
+}
+.brand-deezer:before {
+    content: "\e906";
+}
+.brand-discord:before {
+    content: "\e907";
+}
+.brand-facebook:before {
+    content: "\e908";
+}
+.brand-facebooklive:before {
+    content: "\e909";
+}
+.brand-github:before {
+    content: "\e90a";
+}
+.brand-gmail:before {
+    content: "\e90b";
+}
+.brand-google:before {
+    content: "\e90c";
+}
+.brand-googledrive:before {
+    content: "\e90d";
+}
+.brand-googlemeet:before {
+    content: "\e90e";
+}
+.brand-googletranslate:before {
+    content: "\e90f";
+}
+.brand-instagram:before {
+    content: "\e910";
+}
+.brand-messenger:before {
+    content: "\e911";
+}
+.brand-mixcloud:before {
+    content: "\e912";
+}
+.brand-napster:before {
+    content: "\e913";
+}
+.brand-notion:before {
+    content: "\e914";
+}
+.brand-pandora:before {
+    content: "\e915";
+}
+.brand-pinterest:before {
+    content: "\e916";
+}
+.brand-platzi:before {
+    content: "\e917";
+}
+.brand-soundcloud:before {
+    content: "\e918";
+}
+.brand-spotify:before {
+    content: "\e919";
+}
+.brand-telegram:before {
+    content: "\e91a";
+}
+.brand-tidal:before {
+    content: "\e91b";
+}
+.brand-tiktok:before {
+    content: "\e91c";
+}
+.brand-twitch:before {
+    content: "\e91d";
+}
+.brand-twitter:before {
+    content: "\e91e";
+}
+.brand-whatsapp:before {
+    content: "\e91f";
+}
+.brand-xpendmusic:before {
+    content: "\e920";
+}
+.brand-youtube:before {
+    content: "\e921";
+}
+.brand-youtubemusic1:before {
+    content: "\e922";
+}
+.brand-zoom:before {
+    content: "\e923";
+}

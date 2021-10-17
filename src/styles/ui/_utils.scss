@@ -1,0 +1,192 @@
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.element {
+    margin-top: $margin-lg;
+    margin-bottom: $margin-lg;
+}
+
+.box {
+    // @include box;
+    padding: 1rem;
+}
+
+.radius\:sm {
+    border-radius: $radius-sm;
+}
+
+.radius {
+    border-radius: $radius;
+}
+
+.radius\:full {
+    border-radius: $radius-full;
+}
+
+// utils margin y padding
+.margin {
+    margin: $margin;
+}
+
+.padding {
+    padding: $padding
+}
+
+.margin-x {
+    margin-right: $margin;
+    margin-left: $margin;
+}
+
+.padding-x {
+    padding-right: $padding;
+    padding-left: $padding;
+}
+
+.margin-y {
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+.padding-y {
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+
+@each $postion in $positions {
+    .margin-#{$postion} {
+        margin-#{$postion}: $margin;
+    }
+
+    .padding-#{$postion} {
+        padding-#{$postion}: $padding;
+    }
+}
+
+@each $name,
+$value in $margins {
+    @each $postion in $positions {
+        .margin-#{$postion}\:#{$name} {
+            margin-#{$postion}: $value;
+        }
+    }
+
+    .margin-x\:#{$name} {
+        margin-right: $value;
+        margin-left: $value;
+    }
+
+    .margin-y\:#{$name} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+}
+
+// padding
+@each $name,
+$value in $paddings {
+    @each $postion in $positions {
+        .padding-#{$postion}\:#{$name} {
+            padding-#{$postion}: $value;
+        }
+    }
+
+    .padding-x\:#{$name} {
+        padding-right: $value;
+        padding-left: $value;
+    }
+
+    .padding-y\:#{$name} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+}
+
+.text-opacity\:1 {
+    color: $color;
+    opacity: 0.6;
+}
+
+.text-opacity\:2 {
+    color: $color;
+    opacity: 0.4;
+}
+
+@each $name,
+$color in $colors {
+    .text-color\:#{$name} {
+        color: $color;
+    }
+
+    .border\:#{$name} {
+        border: 2px solid $color;
+    }
+}
+
+.text-color\:normal {
+    color: $color;
+}
+
+// borde blanco / dark
+.border {
+    border: 2px solid $border-color;
+}
+
+// aling 
+.align\:center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.align\:center-x {
+    display: flex;
+    justify-content: center;
+}
+
+.align\:center-y {
+    display: flex;
+    align-items: center;
+}
+
+.align\:right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.align\:left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.text-align\:center {
+    text-align: center;
+}
+
+.text-align\:right {
+    text-align: right;
+}
+
+.text-align\:left {
+    text-align: left;
+}
+
+/// cursors
+.cursor\:pointer {
+    cursor: pointer;
+}
+
+.cursor\:normal {
+    cursor: auto;
+}
+
+.cursor\:not-allowed {
+    cursor: not-allowed;
+}
+
+.error-text {
+    color: $danger-color;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}

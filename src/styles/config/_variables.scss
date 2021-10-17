@@ -1,0 +1,59 @@
+// main colors -> colores que se mantienen tanto en dark mode como en light mode
+$var-primary-color: #4FBCFF;
+$var-secondary-color: #FF4172;
+$var-success-color: #25a56b;
+$var-warning-color: #d89219;
+$var-danger-color: #ff0059;
+
+// dark mode -> color
+$dark-color: #C7C8C9;
+// dark mode -> bg
+$dark-bg: #18191F;
+$dark-secondary-bg: #1b1c24;
+$dark-extra-bg: lighten($dark-secondary-bg, 4.5%);
+// darkmode -> border
+$dark-border: lighten($dark-secondary-bg, 15%);
+
+// light mode -> color
+$light-color: #303030;
+// light mode -> bg
+// $light-bg: #E1E1E1;
+// $light-secondary-bg: #F2F2F2;
+$light-bg: #f1f6f9;
+$light-secondary-bg: #FFF;
+$light-extra-bg: darken($light-secondary-bg, 6%);
+$light-border: darken($light-secondary-bg, 15%);
+
+:root {
+    //colores
+    --primary-color: #{$var-primary-color};
+    --secondary-color: #{$var-secondary-color};
+    --success-color: #{$var-success-color};
+    --warning-color: #{$var-warning-color};
+    --danger-color: #{$var-danger-color};
+    --color: #{$dark-color};
+    // background
+    --bg: #{$dark-bg};
+    --extra-bg: #{$dark-extra-bg};
+    --secondary-bg: #{$dark-secondary-bg};
+    --border-color: #{$dark-border};
+}
+
+.is-light {
+    //colores
+        --primary-color: #{$var-primary-color};
+        --secondary-color: #{$var-secondary-color};
+        --success-color: #{$var-success-color};
+        --warning-color: #{$var-warning-color};
+        --danger-color: #{$var-danger-color};
+        --color: #{$light-color};
+        // background
+        --bg: #{$light-bg};
+        --extra-bg: #{$light-extra-bg};
+        --secondary-bg: #{$light-secondary-bg};
+        --border-color: #{$light-border};
+}
+
+// @media (prefers-color-scheme: light) {
+
+// }

@@ -1,0 +1,22 @@
+.track-form {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 0   ;
+    background-color: $bg;
+    padding: $padding;
+    border: none;
+    outline: 0;
+    
+    @include from(sm) {
+        border-radius: $radius-sm;
+        margin-top: 2rem;
+    }
+}
+.ReactModal__Overlay--after-open {
+    background-color: rgba(#101010, 0.8) !important;
+}
+.modal-close {
+    cursor: pointer;
+    font-size: 1.3rem;
+    transform: translateY(-0.2rem);
+}

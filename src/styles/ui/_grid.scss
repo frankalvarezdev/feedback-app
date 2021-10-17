@@ -1,0 +1,74 @@
+.item {
+    @include from(md) {
+        &.has-transition {
+            transition: 0.3s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.grid\:2 {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include from(sm) {
+        grid-template-columns: rpt(2, 1fr);
+    }
+}
+
+.grid\:4 {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include from(sm) {
+        grid-template-columns: rpt(2, 1fr);
+    }
+
+    @include from(md) {
+        grid-template-columns: rpt(4, 1fr);
+    }
+}
+
+.grid\:6 {
+    display: grid;
+    grid-template-columns: rpt(2, 1fr);
+
+    &.delete-last {
+        @include from-to(md, lg) {
+
+            // borra los dos ultimos items
+            .item:nth-child(5),
+            .item:nth-child(6) {
+                display: none;
+            }
+        }
+    }
+
+    @include from(sm) {
+        grid-template-columns: rpt(3, 1fr);
+    }
+
+    @include from(md) {
+        grid-template-columns: rpt(4, 1fr);
+    }
+
+    @include from(lg) {
+        grid-template-columns: rpt(6, 1fr);
+    }
+}
+
+// gapp
+.gap\:sm {
+    gap: 1rem;
+}
+
+.gap {
+    gap: 1.5rem;
+}
+
+.gap\:lg {
+    gap: 2rem;
+}

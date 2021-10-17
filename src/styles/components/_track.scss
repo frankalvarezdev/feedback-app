@@ -1,0 +1,39 @@
+.track {
+    background-color: $secondary-bg;
+    padding: $padding;
+    border-radius: $radius-sm;
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1rem;
+    cursor: pointer;
+
+    &-icon {
+        @include center;
+        background-color: $bg;
+        border-radius: $radius-sm;
+    }
+
+    &-title {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    &-artist {
+        margin: 0;
+        opacity: 0.6;
+        font-size: 0.8rem;
+    }
+
+    &-genres {
+        opacity: 0.6;
+        font-size: 0.8rem;
+    }
+}
+
+.new-track {
+    background-color: $secondary-bg;
+    padding: $padding;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    text-align: center;
+}

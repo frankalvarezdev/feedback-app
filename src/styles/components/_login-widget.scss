@@ -1,0 +1,15 @@
+.login {
+    padding-top: 3rem;
+}
+.login-widget {
+    max-width: 500px;
+    margin: auto;
+}
+.update-profile-box {
+    padding-top: 1rem;
+    max-width: 500px;
+    margin: auto;
+    @include from(md) {
+        padding-top: 2rem;
+    }
+}

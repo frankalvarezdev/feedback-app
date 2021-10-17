@@ -1,0 +1,13 @@
+.card {
+    transition: 0.3s;
+    & .image.is-square {
+        border-radius: rpt(2, $radius-sm) 0 0;
+    }
+    &:hover {
+        background-color: transparent;
+        box-shadow: 8px 8px 0px 0px $secondary-bg;
+    }
+}
+.card-content {
+    padding: 0.8rem;
+}
