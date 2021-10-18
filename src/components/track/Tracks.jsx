@@ -3,7 +3,7 @@ import Track from 'components/track/Track';
 import { useSelector } from 'react-redux';
 
 const Tracks = () => {
-    
+
     const tracks = useSelector(state => state.tracks);
 
     return (

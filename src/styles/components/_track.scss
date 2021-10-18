@@ -6,6 +6,7 @@
     grid-template-columns: 5rem 1fr;
     gap: 1rem;
     cursor: pointer;
+    border: 1px solid transparent;
 
     &-icon {
         @include center;
@@ -27,6 +28,19 @@
     &-genres {
         opacity: 0.6;
         font-size: 0.8rem;
+
+        img {
+            border-radius: 3px;
+            display: inline-block;
+        }
+    }
+
+    &.is-listened {
+        background-color: $bg;
+        border: 1px solid $extra-bg;
+        // border-left: 1px solid $extra-bg;
+        // border-right: 1px solid $extra-bg;
+        // border-bottom: 1px solid $secondary-color;
     }
 }
 
@@ -36,4 +50,17 @@
     border-radius: $radius-sm;
     cursor: pointer;
     text-align: center;
+}
+
+.track-iframe iframe {
+    height: 250px;
+    background-color: $secondary-bg;
+    border-radius: $radius-sm;
+    width: 100%;
+}
+
+.track-description {
+    a {
+        color: $primary-color;
+    }
 }

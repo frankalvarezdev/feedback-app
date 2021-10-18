@@ -10,15 +10,19 @@ import { useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { getTracks } from 'lib/api';
 import { supabase } from "lib/supabase";
+import { checkListenedTracks } from "lib/clientDb";
 
 const Routes = () => {
 
     const dispatch = useDispatch();
 
-    
     useEffect(() => {
+        // obtiene los datos de los tracks
         const getData = async () => {
-            const data = await getTracks();
+            let data = await getTracks();
+            
+            data = await checkListenedTracks(data);
+
             dispatch(setTracksAction(data));
         }
 
@@ -26,6 +30,7 @@ const Routes = () => {
 
         // realtime tracks
         supabase.from('tracks').on('*', () => getData()).subscribe();
+
     }, [dispatch])
 
     return (
