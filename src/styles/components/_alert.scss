@@ -1,0 +1,33 @@
+.alert {
+    position: relative;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: $padding-sm 0.6rem;
+    transform: translate(-0.8rem, 0);
+    width: 100%;
+    font-size: 0.9rem;
+    transition: 0.5s;
+    opacity: 1;
+    visibility: visible;
+    background-color: $primary-color;
+    display: grid;
+    grid-template-columns: 1fr 15px;
+
+    &.is-success {
+        background-color: $success-color;
+    }
+
+    &.is-error {
+        background-color: $danger-color;
+    }
+
+    &.is-info {
+        background-color: $extra-bg;
+    }
+
+
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+}

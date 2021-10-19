@@ -22,7 +22,9 @@ const TrackIframe = () => {
                     <div className='close-button' onClick={closeGlobalIframe}>
                         <Icon icon='cancel' /> Cerrar
                     </div>
-                    <Link className='itemclass' to={`/track/${iframe.id}`}/>
+                    
+                    <Link className='layer' to={`/track/${iframe.id}`}/>
+
                     <iframe scrolling="no" frameBorder="0" src={iframe.url} title='Embed player'></iframe>
                 </div>
             )}

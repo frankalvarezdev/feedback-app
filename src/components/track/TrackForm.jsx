@@ -5,11 +5,14 @@ import TagsInput from 'components/utils/TagsInput';
 import { useState } from 'react';
 import { supabase } from 'lib/supabase';
 import { useForm } from "react-hook-form";
+import { useAlert } from 'react-alert';
 
 
 const TrackForm = ({ open, close }) => {
 
     const [genres, setGenres] = useState(['electronic']);
+
+    const alerty = useAlert();
 
     // agrega los generos y si no hay uno agrega el por defecto
     const selectedTags = tags => {
@@ -34,7 +37,9 @@ const TrackForm = ({ open, close }) => {
             .insert([formData]);
         if (error) {
             console.log(error);
+            alerty.error('Error al enviar track');
         } else {
+            alerty.success('Track enviado');
             close();
         }
     }

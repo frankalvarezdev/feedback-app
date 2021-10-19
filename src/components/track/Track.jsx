@@ -1,5 +1,6 @@
 import { fromNow } from 'lib/date';
 import { supabase } from 'lib/supabase';
+import { useAlert } from 'react-alert';
 import { Link } from 'react-router-dom';
 import Icon from '../utils/Icon';
 
@@ -7,17 +8,24 @@ const Track = ({ id, genres, artists, title, created_at, listened, country, user
 
     const user = supabase.auth.user();
 
+    const alerty = useAlert();
+
     const deleteTrack = async () => {
 
         // comprueba si el usuario realmente quiere eliminar
         const deleteConfirm = window.confirm('¿Está seguro de eliminar esta pista?');
 
         if (deleteConfirm) {
-            // const { data, error } =
-            await supabase
+            const { error } = await supabase
                 .from('tracks')
                 .delete()
                 .match({ id: id });
+
+            if (error) {
+                alerty.error('Error al borrar track');
+            } else {
+                alerty.success('Track borrado');
+            }
         }
 
     }
