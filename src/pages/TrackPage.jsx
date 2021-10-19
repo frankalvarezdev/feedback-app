@@ -19,6 +19,11 @@ const TrackPage = () => {
 
     let { id } = useParams();
 
+    const [shareIsOpen, setShareIsOpen] = useState(false);
+
+    const closeShareModal = () => setShareIsOpen(false);
+    const openShareModal = () => setShareIsOpen(true);
+
     const [track, setTrack] = useState();
 
     useEffect(() => {
@@ -57,7 +62,8 @@ const TrackPage = () => {
 
     return (
         <>
-            <Share />
+            <Share isOpen={shareIsOpen} onRequestClose={closeShareModal} url={window.location.href} />
+
             <div className="container padding-top">
                 {track ? (
                     <div className="trackpage">
@@ -68,13 +74,13 @@ const TrackPage = () => {
                                 </button>
                             </div>
                             <div className='text-align:center'>
-                                <button className="trackpage-back button is-info" onClick={back}>
+                                <button className="trackpage-back button is-info" onClick={openShareModal}>
                                     <Icon icon='share' /> Compartir
                                 </button>
                             </div>
                             <div className='button-rigth'>
                                 <a className='button is-info' target='_blank' rel='noreferrer' href={track.url}>
-                                    Ver en {track.iframe.service} <Icon icon='open_in_new' />
+                                    {track.iframe.service} <Icon icon='open_in_new' />
                                 </a>
                             </div>
                         </div>
@@ -94,7 +100,7 @@ const TrackPage = () => {
                             </p>
                             <hr />
                             <div className='trackpage-date'>
-                                <Icon icon='schedule' /> {fromNow(track.created_at)} ● <img alt="country" src={track.country === 'NONE' ? '/world.svg' : `https://purecatamphetamine.github.io/country-flag-icons/3x2/${track.country}.` + 'svg'} width="16" />
+                                <Icon icon='schedule' /> {fromNow(track.created_at)} ● <img alt="country" src={track.country === 'NONE' ? '/world.svg' : `https://purecatamphetamine.github.io/country-flag-icons/3x2/${track.country}.svg`} width="16" />
                             </div>
                             <Markdown className='trackpage-description' children={track.description} remarkPlugins={[remarkGfm]} />
                         </div>

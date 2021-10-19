@@ -1,5 +1,5 @@
 import Icon from 'components/utils/Icon';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const TabMenu = () => {
     return (

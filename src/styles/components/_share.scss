@@ -1,4 +1,4 @@
-#share-modal {
+.share-container {
     color: $color;
     top: 0;
     position: fixed;
@@ -79,7 +79,7 @@
     }
 
     .copy {
-        background-color: #18191f;
+        background-color: $secondary-bg;
         cursor: pointer;
     }
 
