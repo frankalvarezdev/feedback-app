@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: 5rem 1fr;
     gap: 1rem;
-    cursor: pointer;
     border: 1px solid transparent;
 
     &-icon {
@@ -42,6 +41,16 @@
         // border-right: 1px solid $extra-bg;
         // border-bottom: 1px solid $secondary-color;
     }
+
+    &-actionbuttons {
+        margin-top: 0.3rem;
+        button {
+            font-size: 0.7rem !important;
+            @include to(sm) {
+                width: 100% !important;
+            }
+        }
+    }
 }
 
 .new-track {
@@ -50,17 +59,4 @@
     border-radius: $radius-sm;
     cursor: pointer;
     text-align: center;
-}
-
-.track-iframe iframe {
-    height: 250px;
-    background-color: $secondary-bg;
-    border-radius: $radius-sm;
-    width: 100%;
-}
-
-.track-description {
-    a {
-        color: $primary-color;
-    }
 }

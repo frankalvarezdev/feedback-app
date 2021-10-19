@@ -67,7 +67,7 @@ const Account = ({ session }) => {
     }
 
     return (
-        <div className="update-profile-box">
+        <div className="update-profile-box container">
             <div className='field'>
                 <label htmlFor="email">Correo electrónico</label>
                 <input id="email" type="text" className='input' value={session.user.email} disabled />

@@ -6,12 +6,7 @@
 @import "./components/container";
 @import "./components/form";
 @import "./components/navbar";
-@import "./components/box";
-@import "./components/login-widget";
-@import "./components/tabs";
-@import "./components/track-form";
-@import "./components/chips";
-@import "./components/track";
+
 
 @import "./ui/tags";
 @import "./ui/button";
@@ -34,6 +29,16 @@
 @import "./ui/share";
 
 @import "./icons/icons";
+
+
+@import "./components/box";
+@import "./components/login-widget";
+@import "./components/tabs";
+@import "./components/track-form";
+@import "./components/chips";
+@import "./components/track";
+
+@import "./pages/trackPage";
 
 html {
     font-family: 'Poppins', sans-serif;

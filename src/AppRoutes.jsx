@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { getTracks } from 'lib/api';
 import { supabase } from "lib/supabase";
 import { checkListenedTracks } from "lib/clientDb";
+import UserTracks from "pages/UserTracks";
 
 const Routes = () => {
 
@@ -38,7 +39,10 @@ const Routes = () => {
             <Route path="/track/:id">
                 <TrackWidget />
             </Route>
-            <Route path="/account">
+            <Route path="/user/tracks">
+                <UserTracks />
+            </Route>
+            <Route path="/user">
                 <Account />
             </Route>
             <Route path="/">

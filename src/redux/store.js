@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 import { ADD_SESSION, SET_TRACKS } from './actions';
 
 const initialStore = {
-    tracks: { error: false, data: [] },
+    tracks: { error: false, data: false },
     session: null
 }
 

@@ -15,7 +15,9 @@ $colors: (
     danger: $danger-color,
     warning: $warning-color,
     success: $success-color,
-    primary: $secondary-color
+    primary: $secondary-color,
+    secondary: $primary-color,
+    info: $secondary-bg
 );
 
 // border

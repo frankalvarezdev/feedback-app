@@ -8,12 +8,16 @@ const Tracks = () => {
 
     return (
         <>
-            {tracks.data.length > 0 ? (
-                <div className="grid:2 padding-top gap">
-                    {tracks.data.map((track, trackIndex) => (
-                        <Track key={trackIndex} {...track} />
-                    ))}
-                </div>
+            {tracks.data ? (
+
+                tracks.data.length > 0 ? (
+                    <div className="grid:2 padding-top gap">
+                        {tracks.data.map((track, trackIndex) => (
+                            <Track key={trackIndex} {...track} />
+                        ))}
+                    </div>
+                ) : <div className='text-align:center padding-top text-opacity:1'>Aun no hay tracks</div>
+
             ) : <Loading />}
         </>
     )

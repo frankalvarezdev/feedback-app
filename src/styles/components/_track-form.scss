@@ -7,6 +7,10 @@
     border: none;
     outline: 0;
     
+    @include to(sm) {
+        height: 100vh;
+    }
+    
     @include from(sm) {
         border-radius: $radius-sm;
         margin-top: 2rem;
@@ -14,6 +18,7 @@
 }
 .ReactModal__Overlay--after-open {
     background-color: rgba(#101010, 0.8) !important;
+    overflow-y: scroll;
 }
 .modal-close {
     cursor: pointer;

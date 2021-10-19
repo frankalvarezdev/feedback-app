@@ -1,0 +1,64 @@
+.trackpage {
+
+    max-width: 650px;
+    margin: auto;
+
+    &-topbuttons {
+        margin-bottom: 1rem;
+        display: grid;
+        @include col(1 1);
+
+        .button-rigth {
+            text-align: end;
+        }
+
+        button,
+        a {
+            font-size: 0.8rem;
+        }
+    }
+
+    &-iframe iframe {
+        height: 250px;
+        background-color: $secondary-bg;
+        border-radius: $radius-sm;
+        width: 100%;
+    }
+
+    &-genres {
+        opacity: 0.6;
+        font-size: 0.8rem;
+    }
+
+    &-title {
+        margin: 0;
+    }
+
+    &-date {
+        font-size: 0.8rem;
+        opacity: 0.6;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+
+        img {
+            border-radius: 3px;
+            display: inline-block;
+        }
+    }
+
+    &-artist {
+        margin: 0;
+    }
+
+    &-description {
+        p:last-child {
+            margin: 0;
+        }
+
+        opacity: 0.6;
+
+        a {
+            color: $primary-color;
+        }
+    }
+}

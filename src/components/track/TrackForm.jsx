@@ -68,7 +68,7 @@ const TrackForm = ({ open, close }) => {
                 </div>
                 <div className='field margin-top'>
                     <label className='label'>Url</label>
-                    <input type="text" className={`input ${errors.url && 'is-danger'}`} placeholder='SoundCloud o YouTube' {...register('url', { pattern: /(https?:\/\/)+(soundcloud.com|soundcloud.app|youtube.com\/watch|youtu.be|audiomack.com)/, required: true })} />
+                    <input type="text" className={`input ${errors.url && 'is-danger'}`} placeholder='SoundCloud o YouTube' {...register('url', { pattern: /(https?:\/\/)+(soundcloud.com|soundcloud.app|www.youtube.com\/watch|youtube.com\/watch|youtu.be|audiomack.com)/, required: true })} />
                     {errors.url && <span className='error-text'>URL no válida</span>}
                 </div>
                 <div className='field'>
