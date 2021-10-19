@@ -6,7 +6,7 @@
     &-topbuttons {
         margin-bottom: 1rem;
         display: grid;
-        @include col(1 1);
+        @include col(1 1 1);
 
         .button-rigth {
             text-align: end;

@@ -11,6 +11,7 @@ import { addListenedTrack, checkListenedTracks } from "lib/clientDb";
 import { useDispatch } from "react-redux";
 import { setTracksAction } from "redux/actionCreators";
 import { store } from "redux/store";
+import Share from "components/utils/Share";
 
 const TrackPage = () => {
 
@@ -55,44 +56,52 @@ const TrackPage = () => {
     }
 
     return (
-        <div className="container padding-top">
-            {track ? (
-                <div className="trackpage">
-                    <div className="trackpage-topbuttons">
-                        <div>
-                            <button className="trackpage-back button is-info" onClick={back}>
-                                <Icon icon='arrow_back' /> Volver
-                            </button>
+        <>
+            <Share />
+            <div className="container padding-top">
+                {track ? (
+                    <div className="trackpage">
+                        <div className="trackpage-topbuttons">
+                            <div>
+                                <button className="trackpage-back button is-info" onClick={back}>
+                                    <Icon icon='arrow_back' /> Volver
+                                </button>
+                            </div>
+                            <div className='text-align:center'>
+                                <button className="trackpage-back button is-info" onClick={back}>
+                                    <Icon icon='share' /> Compartir
+                                </button>
+                            </div>
+                            <div className='button-rigth'>
+                                <a className='button is-info' target='_blank' rel='noreferrer' href={track.url}>
+                                    Ver en {track.iframe.service} <Icon icon='open_in_new' />
+                                </a>
+                            </div>
                         </div>
-                        <div className='button-rigth'>
-                            <a className='button is-info' target='_blank' rel='noreferrer' href={track.url}>
-                                Ver en {track.iframe.service} <Icon icon='open_in_new' />
-                            </a>
+                        <div className="trackpage-iframe">
+                            <iframe scrolling="no" frameBorder="0" src={track.iframe.url} title={`${track.iframe.service} embed player`}></iframe>
+                        </div>
+                        <br />
+                        <div className="box">
+                            <div className='trackpage-genres'>
+                                {track.genres.map((genre) => `#${genre} `)}
+                            </div>
+                            <h3 className='trackpage-title'>
+                                {track.title}
+                            </h3>
+                            <p className='trackpage-artist'>
+                                {track.artists}
+                            </p>
+                            <hr />
+                            <div className='trackpage-date'>
+                                <Icon icon='schedule' /> {fromNow(track.created_at)} ● <img alt="country" src={track.country === 'NONE' ? '/world.svg' : `https://purecatamphetamine.github.io/country-flag-icons/3x2/${track.country}.` + 'svg'} width="16" />
+                            </div>
+                            <Markdown className='trackpage-description' children={track.description} remarkPlugins={[remarkGfm]} />
                         </div>
                     </div>
-                    <div className="trackpage-iframe">
-                        <iframe scrolling="no" frameBorder="0" src={track.iframe.url} title={`${track.iframe.service} embed player`}></iframe>
-                    </div>
-                    <br />
-                    <div className="box">
-                        <div className='trackpage-genres'>
-                            {track.genres.map((genre) => `#${genre} `)}
-                        </div>
-                        <h3 className='trackpage-title'>
-                            {track.title}
-                        </h3>
-                        <p className='trackpage-artist'>
-                            {track.artists}
-                        </p>
-                        <hr />
-                        <div className='trackpage-date'>
-                            <Icon icon='schedule' /> {fromNow(track.created_at)} ● <img alt="country" src={track.country === 'NONE' ? '/world.svg' : `https://purecatamphetamine.github.io/country-flag-icons/3x2/${track.country}.svg`} width="16" />
-                        </div>
-                        <Markdown className='trackpage-description' children={track.description} remarkPlugins={[remarkGfm]} />
-                    </div>
-                </div>
-            ) : <Loading />}
-        </div>
+                ) : <Loading />}
+            </div>
+        </>
     )
 }
 
