@@ -18,11 +18,10 @@
         }
     }
 
-    &-iframe iframe {
+    &-iframe {
         height: 250px;
-        background-color: $secondary-bg;
-        border-radius: $radius-sm;
         width: 100%;
+        margin-bottom: 0.7rem;
     }
 
     &-genres {
@@ -31,13 +30,18 @@
     }
 
     &-title {
-        margin: 0;
+        margin-top: 0.3rem;
+        line-height: 0.9rem;
+    }
+
+    hr {
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
     }
 
     &-date {
         font-size: 0.8rem;
         opacity: 0.6;
-        margin-top: 1rem;
         margin-bottom: 0.5rem;
 
         img {
@@ -61,4 +65,76 @@
             color: $primary-color;
         }
     }
+}
+
+.global-iframe {
+    z-index: 20;
+    background-color: $secondary-bg;
+    
+    &-top {
+        border-radius: $radius-sm;
+        height: 250px;
+        width: 100%;
+        top: 4.3rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        position: absolute;
+        max-width: 650px;
+        
+        .close-button {
+            display: none;
+        }
+    }
+    
+    &-bottom {
+        border-radius: $radius-sm;
+        position: fixed;
+        bottom: 85px;
+        right: 15px;
+        width: 320px;
+        height: 180px;
+        
+        @include to(sm) {
+            width: 100%;
+            right: 0;
+            height: 150px;
+            bottom: 70px;
+            border-radius: 0;
+        }
+
+        .close-button {
+            display: none;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            cursor: pointer;
+            background-color: $secondary-bg;
+            border: 2px solid $extra-bg;
+            padding: 0 0.3rem;
+            border-radius: $radius-full;
+            font-size: 0.9rem;
+        }
+
+        &:hover .close-button {
+            display: inline-block;
+        }
+        .itemclass {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+        }
+    }
+
+    iframe {
+        border-radius: $radius-sm;
+        width: 100%;
+        height: 100%;
+
+        @include to(sm) {
+            border-radius: 0;
+        }
+    }
+
 }

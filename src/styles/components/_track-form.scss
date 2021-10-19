@@ -19,6 +19,7 @@
 .ReactModal__Overlay--after-open {
     background-color: rgba(#101010, 0.8) !important;
     overflow-y: scroll;
+    z-index: 9999;
 }
 .modal-close {
     cursor: pointer;

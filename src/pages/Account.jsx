@@ -67,43 +67,46 @@ const Account = ({ session }) => {
     }
 
     return (
-        <div className="update-profile-box container">
-            <div className='field'>
-                <label htmlFor="email">Correo electrónico</label>
-                <input id="email" type="text" className='input' value={session.user.email} disabled />
-            </div>
-            <div className='field'>
-                <label htmlFor="username">Nombre</label>
-                <input
-                    id="username"
-                    type="text"
-                    value={username || ''}
-                    className='input'
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-            </div>
-            <div className='field'>
-                <label htmlFor="website">Website</label>
-                <input
-                    id="website"
-                    type="website"
-                    className='input is-text'
-                    value={website || ''}
-                    onChange={(e) => setWebsite(e.target.value)}
-                />
-            </div>
+        <div className="container">
+            <br />
+            <div className="update-profile-box box">
+                <div className='field'>
+                    <label htmlFor="email">Correo electrónico</label>
+                    <input id="email" type="text" className='input' value={session.user.email} disabled />
+                </div>
+                <div className='field'>
+                    <label htmlFor="username">Nombre</label>
+                    <input
+                        id="username"
+                        type="text"
+                        value={username || ''}
+                        className='input'
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div className='field'>
+                    <label htmlFor="website">Website</label>
+                    <input
+                        id="website"
+                        type="website"
+                        className='input is-text'
+                        value={website || ''}
+                        onChange={(e) => setWebsite(e.target.value)}
+                    />
+                </div>
 
-            <div className="grid:2 gap">
-                <button
-                    className="button is-success"
-                    onClick={() => updateProfile({ username, website, avatar_url })}
-                    disabled={loading}
-                >
-                    {loading ? 'Cargando...' : 'Actualizar'}
-                </button>
-                <button className="button is-danger" onClick={() => supabase.auth.signOut()}>
-                    Cerrar la sesión
-                </button>
+                <div className="grid:2 gap">
+                    <button
+                        className="button is-success"
+                        onClick={() => updateProfile({ username, website, avatar_url })}
+                        disabled={loading}
+                    >
+                        {loading ? 'Cargando...' : 'Actualizar'}
+                    </button>
+                    <button className="button is-danger" onClick={() => supabase.auth.signOut()}>
+                        Cerrar la sesión
+                    </button>
+                </div>
             </div>
         </div>
     )

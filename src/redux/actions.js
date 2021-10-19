@@ -1,2 +1,4 @@
 export const SET_TRACKS = 'SET_TRACKS';
 export const ADD_SESSION = 'ADD_SESSION';
+export const SET_GLOBAL_IFRAME = 'SET_GLOBAL_IFRAME';
+export const SET_IFRAME_POSITION = 'SET_IFRAME_POSITION';

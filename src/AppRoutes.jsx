@@ -5,15 +5,18 @@ import {
 import TrackWidget from 'pages/TrackPage'
 import Account from 'pages/Account';
 import Explore from 'pages/Explore';
-import { setTracksAction } from 'redux/actionCreators';
+import { setIframePositionAction, setTracksAction } from 'redux/actionCreators';
 import { useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { getTracks } from 'lib/api';
 import { supabase } from "lib/supabase";
 import { checkListenedTracks } from "lib/clientDb";
 import UserTracks from "pages/UserTracks";
+import { useHistory } from "react-router";
 
 const Routes = () => {
+
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -21,7 +24,7 @@ const Routes = () => {
         // obtiene los datos de los tracks
         const getData = async () => {
             let data = await getTracks();
-            
+
             data = await checkListenedTracks(data);
 
             dispatch(setTracksAction(data));
@@ -32,7 +35,14 @@ const Routes = () => {
         // realtime tracks
         supabase.from('tracks').on('*', () => getData()).subscribe();
 
-    }, [dispatch])
+        history.listen((location, action) => {
+            if (!/\/track\//.test(location.pathname)) {
+                dispatch(setIframePositionAction(2));
+            } else {
+                dispatch(setIframePositionAction(1));
+            }
+        })
+    }, [dispatch, history])
 
     return (
         <Switch>

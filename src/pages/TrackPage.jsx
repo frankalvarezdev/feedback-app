@@ -9,7 +9,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { addListenedTrack, checkListenedTracks } from "lib/clientDb";
 import { useDispatch } from "react-redux";
-import { setTracksAction } from "redux/actionCreators";
+import { setGlobalIframeAction, setTracksAction } from "redux/actionCreators";
 import { store } from "redux/store";
 import Share from "components/utils/Share";
 
@@ -35,9 +35,13 @@ const TrackPage = () => {
                 if (error && status !== 406) throw error;
 
                 // genera la url del iframe
-                data['iframe'] = await getIframeUrl(data.url);
+                const iframe = await getIframeUrl(data.url);
+
+                data['iframe'] = iframe;
 
                 setTrack(data);
+
+                dispatch(setGlobalIframeAction({...iframe, id: data.id}))
 
                 // agrega a tracks escuchados y recarga el store
                 const change = await addListenedTrack(data.id);
@@ -85,10 +89,9 @@ const TrackPage = () => {
                             </div>
                         </div>
                         <div className="trackpage-iframe">
-                            <iframe scrolling="no" frameBorder="0" src={track.iframe.url} title={`${track.iframe.service} embed player`}></iframe>
+                            {/* <iframe scrolling="no" frameBorder="0" src={track.iframe.url} title={`${track.iframe.service} embed player`}></iframe> */}
                         </div>
-                        <br />
-                        <div className="box">
+                        <div className="trackpage-data">
                             <div className='trackpage-genres'>
                                 {track.genres.map((genre) => `#${genre} `)}
                             </div>

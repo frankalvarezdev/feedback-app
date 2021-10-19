@@ -8,6 +8,7 @@ import TabMenu from 'components/layout/TabMenu'
 import Routes from 'AppRoutes'
 import { useDispatch, useSelector } from 'react-redux'
 import { addSessionAction } from 'redux/actionCreators'
+import TrackIframe from 'components/track/TrackIframe'
 
 const App = () => {
 	const session = useSelector(state => state.session);
@@ -29,6 +30,8 @@ const App = () => {
 
 				{!session ? <Auth /> : (
 					<>
+						<TrackIframe/>
+						
 						<Routes />
 
 						<TabMenu />
